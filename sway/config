@@ -201,10 +201,20 @@ bindsym $mod+r mode "resize"
 
 
 #variety
-exec variety
+#exec variety
 
 #firefox
 bindsym $mod+c exec firefox
+
+
+#switch to last workspace
+bindsym $mod+Escape workspace back_and_forth
+
+#polkit agent
+exec --no-startup-id lxsession
+
+#wallpaper
+output "*" bg /home/ac/.wallpapers/arch.png fill
 
 
 #language
@@ -216,7 +226,24 @@ input * {
 
 input <identifier> xkb_model "pc101"
 
+#play/pause/next/prev
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
 
+#volume control
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3statu
+
+
+#power-management/brightness
+
+
+
+#lock
+bindsym $mod+q exec swaylock --image /home/ac/.wallpapers/arch.png
 
 # Status Bar:
 #
