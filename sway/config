@@ -18,7 +18,7 @@ set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | wofi --show drun --gtk-dark --no-actions | xargs swaymsg exec --
+set $menu dmenu_path | wofi --show run --gtk-dark --no-actions | xargs swaymsg exec --
 
 ### Output configuration
 #
@@ -214,7 +214,7 @@ bindsym $mod+Escape workspace back_and_forth
 exec --no-startup-id lxsession
 
 #wallpaper
-output "*" bg /home/ac/.wallpapers/arch.png fill
+output "*" bg /home/ac/.wallpapers/ram.jpg fill
 
 
 #language
@@ -232,15 +232,13 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 #volume control
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3statu
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 
-
-#power-management/brightness
-
-
+#brightness
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
 
 #lock
 bindsym $mod+q exec swaylock --image /home/ac/.wallpapers/arch.png
