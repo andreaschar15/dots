@@ -214,7 +214,7 @@ bindsym $mod+Escape workspace back_and_forth
 exec --no-startup-id lxsession
 
 #wallpaper
-output "*" bg /home/ac/.wallpapers/ram.jpg fill
+output "*" bg /home/ac/.wallpapers/ram2.jpg fill
 
 
 #language
