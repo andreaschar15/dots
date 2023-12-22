@@ -23,7 +23,7 @@ set $menu dmenu_path | wofi --show run --gtk-dark --no-actions | xargs swaymsg e
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output * bg /home/ac/.wallpapers/arch.png fill
 #
 # Example configuration:
 #
@@ -35,9 +35,10 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #
 # Example configuration:
 #
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+#exec swayidle -w \
+#          timeout 300 'swaylock --image /home/ac/.wallpapers/arch.png' \
+#          timeout 305 'systemctl suspend' \
+#          timeout 305 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
 #          before-sleep 'swaylock -f -c 000000'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
@@ -199,9 +200,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-
-#variety
-#exec variety
+#thunar
+bindsym $mod+t exec thunar
 
 #firefox
 bindsym $mod+c exec firefox
@@ -214,14 +214,14 @@ bindsym $mod+Escape workspace back_and_forth
 exec --no-startup-id lxsession
 
 #wallpaper
-output "*" bg /home/ac/.wallpapers/ram2.jpg fill
+exec --no-startup-id variety
+#output "*" bg /home/ac/.wallpapers/ram2.jpg fill
 
 
 #language
-input * {
-    xkb_layout "us,gr"
-    xkb_variant "qwerty"
-    xkb_options "grp:win_space_toggle"
+input type:keyboard {
+    xkb_layout us,gr
+    xkb_options grp:alt_shift_toggle
 }
 
 input <identifier> xkb_model "pc101"
@@ -235,6 +235,14 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+#lock
+#bindsym XF86LogOff exec alacritty
+
+#suspend
+exec --no-startup-id "swayidle -w before-sleep 'swaylock --image /home/ac/.wallpapers/arch.png'"
+bindsym $mod+Shift+s exec --no-startup-id 'systemctl suspend'
 
 #brightness
 bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
@@ -247,6 +255,7 @@ bindsym $mod+q exec swaylock --image /home/ac/.wallpapers/arch.png
 #
 # Read `man 5 sway-bar` for more information about this section.
 default_border none
+default_floating_border none
 bar {
     position bottom
 
