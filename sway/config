@@ -244,6 +244,10 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 exec --no-startup-id "swayidle -w before-sleep 'swaylock --image /home/ac/.wallpapers/arch.png'"
 bindsym $mod+Shift+s exec --no-startup-id 'systemctl suspend'
 
+#screenshot tool
+bindsym $mod+g exec --no-startup-id grim
+
+
 #brightness
 bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
