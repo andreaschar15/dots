@@ -17,4 +17,5 @@ alias gk='cat /home/ac/.gitk'
 alias vim='nvim'
 alias mew='cowsay mew'
 alias ll='ls -l'
+alias open='xdg-open'
 #neofetch
