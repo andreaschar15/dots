@@ -18,4 +18,5 @@ alias vim='nvim'
 alias mew='cowsay mew'
 alias ll='ls -l'
 alias open='xdg-open'
+alias digitalw='wine /home/ac/Downloads/DigitalWorks/DigitalWorks.exe'
 #neofetch
