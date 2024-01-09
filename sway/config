@@ -203,8 +203,8 @@ bindsym $mod+r mode "resize"
 #thunar
 bindsym $mod+t exec thunar
 
-#firefox
-bindsym $mod+c exec firefox
+#browser
+bindsym $mod+c exec floorp
 
 
 #switch to last workspace
@@ -245,7 +245,7 @@ exec --no-startup-id "swayidle -w before-sleep 'swaylock --image /home/ac/.wallp
 bindsym $mod+Shift+s exec --no-startup-id 'systemctl suspend'
 
 #screenshot tool
-bindsym $mod+g exec --no-startup-id grim
+bindsym Print exec --no-startup-id grim
 
 
 #brightness
