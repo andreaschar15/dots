@@ -1,6 +1,9 @@
-#ac's sway config
+#Default config for sway
 #
+# Copy this to ~/.config/sway/config and edit it to your liking.
 #
+# Read `man 5 sway` for a complete reference.
+
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -242,7 +245,7 @@ exec --no-startup-id "swayidle -w before-sleep 'swaylock --image /home/ac/.wallp
 bindsym $mod+Shift+s exec --no-startup-id 'systemctl suspend'
 
 #screenshot tool
-bindsym Print exec --no-startup-id grim
+bindsym $mod+g exec --no-startup-id grim
 
 
 #brightness
@@ -272,4 +275,3 @@ bar {
 }
 
 include /etc/sway/config.d/*
-
