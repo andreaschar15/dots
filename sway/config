@@ -204,7 +204,7 @@ bindsym $mod+r mode "resize"
 bindsym $mod+t exec thunar
 
 #browser
-bindsym $mod+c exec floorp
+bindsym $mod+c exec firefox
 
 
 #switch to last workspace
@@ -246,6 +246,10 @@ bindsym $mod+Shift+s exec --no-startup-id 'systemctl suspend'
 
 #screenshot tool
 bindsym $mod+g exec --no-startup-id grim
+
+
+#gammastep (don't hurt my eyes)
+exec --no-startup-id gammastep
 
 
 #brightness
