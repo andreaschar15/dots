@@ -204,7 +204,7 @@ bindsym $mod+r mode "resize"
 bindsym $mod+t exec thunar
 
 #browser
-bindsym $mod+c exec firefox
+bindsym $mod+c exec floorp
 
 
 #switch to last workspace
