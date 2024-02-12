@@ -1,2 +1,2 @@
 require("ac.remap")
-print("hello from ac")
+require("ac.set")
