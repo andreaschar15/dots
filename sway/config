@@ -200,8 +200,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-#thunar
-bindsym $mod+t exec thunar
+#nemo
+bindsym $mod+n exec nemo
 
 #browser
 bindsym $mod+c exec floorp
@@ -212,6 +212,10 @@ bindsym $mod+Escape workspace back_and_forth
 
 #polkit agent
 exec --no-startup-id lxsession
+
+#mount google drive
+exec --no-startup-id rclone mount gdrive: /home/ac/gdrive
+
 
 #wallpaper
 exec --no-startup-id variety
@@ -258,6 +262,12 @@ bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
 
 #lock
 bindsym $mod+q exec swaylock --image /home/ac/.wallpapers/arch.png
+
+#default workspaces for applications
+assign [class="qbittorrent"] 10
+assign [class="Spotify"] 9
+
+
 
 # Status Bar:
 #
