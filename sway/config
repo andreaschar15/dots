@@ -222,6 +222,10 @@ exec --no-startup-id variety
 #output "*" bg /home/ac/.wallpapers/ram2.jpg fill
 
 
+#kdeconnect
+exec --no-startup-id kdeconnect-indicator
+
+
 #language
 input type:keyboard {
     xkb_layout us,gr
