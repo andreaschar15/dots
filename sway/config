@@ -204,7 +204,7 @@ bindsym $mod+r mode "resize"
 bindsym $mod+n exec nemo
 
 #browser
-bindsym $mod+c exec floorp
+bindsym $mod+c exec firefox
 
 
 #switch to last workspace
@@ -221,6 +221,8 @@ exec --no-startup-id rclone mount gdrive: /home/ac/gdrive
 exec --no-startup-id variety
 #output "*" bg /home/ac/.wallpapers/ram2.jpg fill
 
+#notifications (mako)
+exec --no-startup-id mako
 
 #kdeconnect
 exec --no-startup-id kdeconnect-indicator
@@ -245,8 +247,6 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
-#lock
-#bindsym XF86LogOff exec alacritty
 
 #suspend
 exec --no-startup-id "swayidle -w before-sleep 'swaylock --image /home/ac/.wallpapers/arch.png'"
@@ -270,6 +270,7 @@ bindsym $mod+q exec swaylock --image /home/ac/.wallpapers/arch.png
 #default workspaces for applications
 assign [class="qbittorrent"] 10
 assign [class="Spotify"] 9
+assign [class="discord"] 4
 
 
 

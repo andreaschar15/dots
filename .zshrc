@@ -80,7 +80,6 @@ ZSH_THEME="robbyrussell"
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting zsh-autocomplete)
 
 source $ZSH/oh-my-zsh.sh
-
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -89,11 +88,11 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+   export EDITOR='nvim'
+ else
+   export EDITOR='nvim'
+ fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -104,13 +103,14 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 alias blueon='sudo systemctl start bluetooth'
+alias blueoff='sudo systemctl stop bluetooth'
+alias blueon='sudo systemctl start bluetooth'
 alias notes='sh /home/ac/.scripts/notes.sh'
 alias v='nvim'
 alias gr='setxkbmap gr'
 alias α='setxkbmap us'
 alias c='clear'
 alias vm='./.scripts/vm.sh'
-alias blueoff='sudo systemctl stop bluetooth'
 alias gk='cat /home/ac/.gitk'
 alias vim='nvim'
 alias ll='ls -l'
@@ -118,8 +118,8 @@ alias open='xdg-open'
 alias digitalw='wine /home/ac/uni/log_sxed/DigitalWorks/DigitalWorks.exe'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+alias obs='cd /home/ac/.obsidian/ac/andreas'
 
-#fortune | cowsay
 source /home/ac/.powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
