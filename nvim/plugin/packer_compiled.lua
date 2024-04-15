@@ -120,7 +120,7 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["obsidian.nvim"] = {
-    config = { "\27LJ\2\nw\0\0\5\0\6\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0004\3\3\0005\4\3\0>\4\1\3=\3\5\2B\0\2\1K\0\1\0\15workspaces\1\0\0\1\0\2\tpath\19~/.obsidian/ac\tname\aac\nsetup\robsidian\frequire\0" },
+    config = { "\27LJ\2\n£\1\0\0\5\0\b\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0024\3\3\0005\4\6\0>\4\1\3=\3\a\2B\0\2\1K\0\1\0\15workspaces\1\0\2\tname\aac\tpath\19~/.obsidian/ac\15completion\1\0\0\1\0\2\14min_chars\3\2\rnvim_cmp\2\nsetup\robsidian\frequire\0" },
     loaded = true,
     path = "/home/ac/.local/share/nvim/site/pack/packer/start/obsidian.nvim",
     url = "https://github.com/epwalsh/obsidian.nvim"
@@ -155,7 +155,7 @@ _G.packer_plugins = {
 time([[Defining packer_plugins]], false)
 -- Config for: obsidian.nvim
 time([[Config for obsidian.nvim]], true)
-try_loadstring("\27LJ\2\nw\0\0\5\0\6\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0004\3\3\0005\4\3\0>\4\1\3=\3\5\2B\0\2\1K\0\1\0\15workspaces\1\0\0\1\0\2\tpath\19~/.obsidian/ac\tname\aac\nsetup\robsidian\frequire\0", "config", "obsidian.nvim")
+try_loadstring("\27LJ\2\n£\1\0\0\5\0\b\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0024\3\3\0005\4\6\0>\4\1\3=\3\a\2B\0\2\1K\0\1\0\15workspaces\1\0\2\tname\aac\tpath\19~/.obsidian/ac\15completion\1\0\0\1\0\2\14min_chars\3\2\rnvim_cmp\2\nsetup\robsidian\frequire\0", "config", "obsidian.nvim")
 time([[Config for obsidian.nvim]], false)
 
 _G._packer.inside_compile = false

@@ -19,8 +19,8 @@ return require('packer').startup(function(use)
 	  branch = 'v3.x',
 	  requires = {
 		  --- Uncomment the two plugins below if you want to manage the language servers from neovim
-		  -- {'williamboman/mason.nvim'},
-		  -- {'williamboman/mason-lspconfig.nvim'},
+		   {'williamboman/mason.nvim'},
+		   {'williamboman/mason-lspconfig.nvim'},
 
 		  -- LSP Support
 		  {'neovim/nvim-lspconfig'},
@@ -55,6 +55,12 @@ return require('packer').startup(function(use)
      },
      config = function()
          require("obsidian").setup({
+             completion = {
+                 -- Set to false to disable completion.
+                 nvim_cmp = true,
+                 -- Trigger completion at 2 chars.
+                 min_chars = 2,
+             },
              workspaces = {
                  {
                      name = "ac",
