@@ -77,7 +77,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting zsh-autocomplete)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting) #zsh-autocomplete)
 
 source $ZSH/oh-my-zsh.sh
 # User configuration
@@ -118,7 +118,7 @@ alias open='xdg-open'
 alias digitalw='wine /home/ac/uni/log_sxed/DigitalWorks/DigitalWorks.exe'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-alias obs='cd /home/ac/.obsidian/ac/andreas'
+alias uni='nvim .obsidian/ac'
 
 source /home/ac/.powerlevel10k/powerlevel10k.zsh-theme
 
