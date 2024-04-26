@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/ac/.cache/nvim/packer_hererocks/2.1.1702233742/share/lua/5.1/?.lua;/home/ac/.cache/nvim/packer_hererocks/2.1.1702233742/share/lua/5.1/?/init.lua;/home/ac/.cache/nvim/packer_hererocks/2.1.1702233742/lib/luarocks/rocks-5.1/?.lua;/home/ac/.cache/nvim/packer_hererocks/2.1.1702233742/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/ac/.cache/nvim/packer_hererocks/2.1.1702233742/lib/lua/5.1/?.so"
+local package_path_str = "/home/ac/.cache/nvim/packer_hererocks/2.1.1713773202/share/lua/5.1/?.lua;/home/ac/.cache/nvim/packer_hererocks/2.1.1713773202/share/lua/5.1/?/init.lua;/home/ac/.cache/nvim/packer_hererocks/2.1.1713773202/lib/luarocks/rocks-5.1/?.lua;/home/ac/.cache/nvim/packer_hererocks/2.1.1713773202/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/ac/.cache/nvim/packer_hererocks/2.1.1713773202/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -84,11 +84,6 @@ _G.packer_plugins = {
     path = "/home/ac/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
-  ["copilot.vim"] = {
-    loaded = true,
-    path = "/home/ac/.local/share/nvim/site/pack/packer/start/copilot.vim",
-    url = "https://github.com/github/copilot.vim"
-  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "/home/ac/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
@@ -120,7 +115,7 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["obsidian.nvim"] = {
-    config = { "\27LJ\2\n£\1\0\0\5\0\b\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0024\3\3\0005\4\6\0>\4\1\3=\3\a\2B\0\2\1K\0\1\0\15workspaces\1\0\2\tname\aac\tpath\19~/.obsidian/ac\15completion\1\0\0\1\0\2\14min_chars\3\2\rnvim_cmp\2\nsetup\robsidian\frequire\0" },
+    config = { "\27LJ\2\n»\1\0\0\5\0\b\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0024\3\3\0005\4\6\0>\4\1\3=\3\a\2B\0\2\1K\0\1\0\15workspaces\1\0\2\tname\aac\tpath\19~/.obsidian/ac\15completion\1\0\2\15completion\0\15workspaces\0\1\0\2\rnvim_cmp\2\14min_chars\3\2\nsetup\robsidian\frequire\0" },
     loaded = true,
     path = "/home/ac/.local/share/nvim/site/pack/packer/start/obsidian.nvim",
     url = "https://github.com/epwalsh/obsidian.nvim"
@@ -155,7 +150,7 @@ _G.packer_plugins = {
 time([[Defining packer_plugins]], false)
 -- Config for: obsidian.nvim
 time([[Config for obsidian.nvim]], true)
-try_loadstring("\27LJ\2\n£\1\0\0\5\0\b\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0024\3\3\0005\4\6\0>\4\1\3=\3\a\2B\0\2\1K\0\1\0\15workspaces\1\0\2\tname\aac\tpath\19~/.obsidian/ac\15completion\1\0\0\1\0\2\14min_chars\3\2\rnvim_cmp\2\nsetup\robsidian\frequire\0", "config", "obsidian.nvim")
+try_loadstring("\27LJ\2\n»\1\0\0\5\0\b\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0024\3\3\0005\4\6\0>\4\1\3=\3\a\2B\0\2\1K\0\1\0\15workspaces\1\0\2\tname\aac\tpath\19~/.obsidian/ac\15completion\1\0\2\15completion\0\15workspaces\0\1\0\2\rnvim_cmp\2\14min_chars\3\2\nsetup\robsidian\frequire\0", "config", "obsidian.nvim")
 time([[Config for obsidian.nvim]], false)
 
 _G._packer.inside_compile = false

@@ -71,6 +71,7 @@ output * bg /home/ac/.wallpapers/arch.png fill
 
     # Start your launcher
     bindsym $mod+d exec $menu
+    bindsym $mod+x exec wofi --show drun
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -206,6 +207,8 @@ bindsym $mod+n exec nemo
 #browser
 bindsym $mod+c exec firefox
 
+#fix for intellij
+exec --no-startup-id bash /home/ac/.scripts/intellij.sh
 
 #screen capture
 exec --no-startup-id /usr/lib/xdg-desktop-portal -r
@@ -276,7 +279,7 @@ bindsym $mod+q exec swaylock --image /home/ac/.wallpapers/arch.png
 #default workspaces for applications
 assign [class="Spotify"] 9
 assign [class="discord"] 4
-assign [class="Pavucontrol"] 10
+assign [class="pavucontrol"] 10
 
 
 

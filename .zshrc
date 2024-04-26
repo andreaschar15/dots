@@ -102,6 +102,7 @@ if [[ -n $SSH_CONNECTION ]]; then
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
+fastfetch
 alias blueon='sudo systemctl start bluetooth'
 alias blueoff='sudo systemctl stop bluetooth'
 alias blueon='sudo systemctl start bluetooth'
@@ -119,8 +120,12 @@ alias digitalw='wine /home/ac/uni/log_sxed/DigitalWorks/DigitalWorks.exe'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias uni='nvim .obsidian/ac'
+alias dihi='ping example.com'
+alias idea='sh /home/ac/.scripts/idea.sh'
 
 source /home/ac/.powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+#export PATH=$PATH:home/ac/.local/share/JetBrains/Toolbox/apps/intellij-idea-community-edition
+eval "$(zoxide init zsh)"
