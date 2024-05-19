@@ -122,6 +122,7 @@ alias grep='grep --color=auto'
 alias uni='nvim .obsidian/ac'
 alias dihi='ping example.com'
 alias idea='sh /home/ac/.scripts/idea.sh'
+alias f='fastfetch'
 
 source /home/ac/.powerlevel10k/powerlevel10k.zsh-theme
 
