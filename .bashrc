@@ -19,7 +19,6 @@ alias blueon='sudo systemctl start bluetooth'
 alias blueoff='sudo systemctl stop bluetooth'
 alias blueon='sudo systemctl start bluetooth'
 alias notes='sh /home/ac/.scripts/notes.sh'
-alias v='nvim'
 alias gr='setxkbmap gr'
 alias α='setxkbmap us'
 alias c='clear'
@@ -32,11 +31,31 @@ alias digitalw='wine /home/ac/uni/log_sxed/DigitalWorks/DigitalWorks.exe'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias uni='nvim .obsidian/ac'
-alias dihi='ping example.com'
 alias idea='sh /home/ac/.scripts/idea.sh'
-alias f='fastfetch'
 alias cp='cp -i'
-alias cat='bat'
+#alias cat='bat'
+#alias ssh='kitty +kitten ssh'
+
+#hastebin
+function hb {
+    if [ $# -eq 0 ]; then
+        echo "No file path specified."
+        return
+    elif [ ! -f "$1" ]; then
+        echo "File path does not exist."
+        return
+    fi
+
+    uri="https://bin.andreascharalambous.xyz/documents"
+    response=$(curl -s -X POST -d "$(cat "$1")" "$uri")
+    if [ $? -eq 0 ]; then
+        hasteKey=$(echo $response | jq -r '.key')
+        echo "https://bin.andreascharalambous.xyz/$hasteKey"
+    else
+        echo "Failed to upload the document."
+    fi
+}
+
 
 #theme
 eval "$(starship init bash)"
