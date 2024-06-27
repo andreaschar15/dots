@@ -6,6 +6,9 @@
 
 ### Variables
 #
+
+font Meslo LGM Nerd Font 11
+
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 # Home row direction keys, like vim
@@ -82,6 +85,8 @@ output * bg /home/ac/.wallpapers/arch.png fill
 
     # Reload the configuration file
     bindsym $mod+Shift+c reload
+   
+    bindsym $mod+Shift+r restart
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
@@ -205,7 +210,10 @@ bindsym $mod+r mode "resize"
 bindsym $mod+n exec nemo
 
 #browser
-bindsym $mod+c exec firefox
+bindsym $mod+c exec brave
+
+#bluetooth
+bindsym $mod+Shift+b exec systemctl start bluetooth
 
 #fix for intellij
 exec --no-startup-id bash /home/ac/.scripts/intellij.sh
@@ -231,9 +239,6 @@ exec --no-startup-id variety
 
 #notifications (mako)
 exec --no-startup-id mako
-
-#kdeconnect
-exec --no-startup-id kdeconnect-indicator
 
 
 #language
@@ -262,8 +267,8 @@ bindsym $mod+Shift+s exec --no-startup-id 'systemctl suspend'
 bindsym $mod+Shift+d exec --no-startup-id 'systemctl hibernate'
 
 #screenshot tool
-bindsym $mod+g exec --no-startup-id grim
-
+bindsym $mod+g exec --no-startup-id grim /home/ac/screens/$(date '+%y%m%d_%H-%M-%S').png
+bindsym $mod+Shift+g exec --no-startup-id slurp | grim -g - /home/ac/screens/$(date '+%y%m%d_%H-%M-%S').png
 
 #gammastep (don't hurt my eyes)
 exec --no-startup-id gammastep
@@ -280,26 +285,20 @@ bindsym $mod+q exec swaylock --image /home/ac/.wallpapers/arch.png
 assign [class="Spotify"] 9
 assign [class="discord"] 4
 assign [class="pavucontrol"] 10
-
-
-
-# Status Bar:
-#
-# Read `man 5 sway-bar` for more information about this section.
 default_border none
 default_floating_border none
+
 bar {
-    position bottom
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    #status_command while date +'%d-%m-%Y %I:%M:%S %p'; do sleep 1; done
-    status_command i3status
-   #colors {
-   #    statusline #ffffff
-   #    background #323232
-   #    inactive_workspace #32323200 #32323200 #5c5c5c
-   #}
+  status_command i3status
+  position bottom
+  tray_output none
+  colors {
+      background #000000
+          statusline #ffffff
+          focused_workspace #000000 #000000 #ffffff
+          active_workspace #000000 #000000 #000000
+          inactive_workspace #000000 #000000 #888888
+          urgent_workspace #ffffff #000000 #ffffff
+  }
 }
-
 include /etc/sway/config.d/*
