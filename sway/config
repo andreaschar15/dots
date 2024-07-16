@@ -210,7 +210,7 @@ bindsym $mod+r mode "resize"
 bindsym $mod+n exec nemo
 
 #browser
-bindsym $mod+c exec brave
+bindsym $mod+c exec firefox
 
 #bluetooth
 bindsym $mod+Shift+b exec systemctl start bluetooth
