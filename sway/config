@@ -17,7 +17,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term alacritty
+set $term kitty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -211,6 +211,8 @@ bindsym $mod+n exec nemo
 
 #browser
 bindsym $mod+c exec firefox
+#launch a private window
+bindsym $mod+p exec firefox --private-window
 
 #bluetooth
 bindsym $mod+Shift+b exec systemctl start bluetooth
@@ -230,7 +232,7 @@ bindsym $mod+Escape workspace back_and_forth
 exec --no-startup-id lxsession
 
 #mount google drive
-exec --no-startup-id rclone mount gdrive: /home/ac/gdrive
+#exec --no-startup-id rclone mount gdrive: /home/ac/gdrive
 
 
 #wallpaper

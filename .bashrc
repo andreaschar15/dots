@@ -61,3 +61,4 @@ function hb {
 eval "$(starship init bash)"
 
 eval "$(zoxide init bash)"
+export LD_LIBRARY_PATH=/opt/Lanxin-MRDVS/lib/:$LD_LIBRARY_PATH

@@ -13,7 +13,18 @@ return require('packer').startup(function(use)
         requires = { {'nvim-lua/plenary.nvim'} }
     }
 
+    use {
+    "OXY2DEV/markview.nvim",
+    ft = "markdown",
 
+    requires = {
+        -- You may not need this if you don't lazy load
+        -- Or if the parsers are in your $RUNTIMEPATH
+        "nvim-treesitter/nvim-treesitter",
+
+        "nvim-tree/nvim-web-devicons"
+    },
+}
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v3.x',
@@ -45,35 +56,6 @@ return require('packer').startup(function(use)
             ts_update()
         end,
     }
-    use({
-        "epwalsh/obsidian.nvim",
-        tag = "*",  -- recommended, use latest release instead of latest commit
-        requires = {
-            -- Required.
-            "nvim-lua/plenary.nvim",
-
-            -- see below for full list of optional dependencies 👇
-        },
-        config = function()
-            require("obsidian").setup({
-                completion = {
-                    -- Set to false to disable completion.
-                    nvim_cmp = true,
-                    -- Trigger completion at 2 chars.
-                    min_chars = 2,
-                },
-                workspaces = {
-                    {
-                        name = "ac",
-                        path = "~/.obsidian/ac",
-                    },
-                },
-
-                -- see below for full list of options 👇
-            })
-        end,
-    })
-    use ({'preservim/vim-markdown'})
 
     use {
         'goolord/alpha-nvim',
