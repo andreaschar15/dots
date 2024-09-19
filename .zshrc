@@ -42,6 +42,7 @@ alias bat-simple='bat --style=plain'
 alias fastfetch='fastfetch --logo-type small'
 alias ψλεαρ='clear'
 alias fastfetch='fastfetch --logo-type file --file /home/ac/.ascii'
+alias wake-tv='wol 3a:a3:6f:54:a2:25'
 
 #hastebin
 #function hb {
@@ -72,8 +73,8 @@ eval "$(starship init zsh)"
 #zoxide
 eval "$(zoxide init zsh)"
 
-#export PYENV_ROOT="$HOME/.pyenv"
-#[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-#eval "$(pyenv init -)"
-#export PATH=$HOME/.local/bin:$PATH
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+export PATH=$HOME/.local/bin:$PATH
 export TERM=xterm-256color
