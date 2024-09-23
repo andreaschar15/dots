@@ -1,12 +1,3 @@
-#Default config for sway
-#
-# Copy this to ~/.config/sway/config and edit it to your liking.
-#
-# Read `man 5 sway` for a complete reference.
-
-### Variables
-#
-
 font Meslo LGM Nerd Font 11
 
 # Logo key. Use Mod1 for Alt.
@@ -215,10 +206,7 @@ bindsym $mod+c exec firefox
 bindsym $mod+p exec firefox --private-window
 
 #bluetooth
-bindsym $mod+Shift+b exec systemctl start bluetooth
-
-#fix for intellij
-exec --no-startup-id bash /home/ac/.scripts/intellij.sh
+bindsym $mod+Shift+b exec --no-startup-id systemctl start bluetooth
 
 #screen capture
 exec --no-startup-id /usr/lib/xdg-desktop-portal -r
