@@ -64,4 +64,10 @@ return require('packer').startup(function(use)
         end
     }
 
+    use {
+        "nvim-lua/plenary.nvim",
+        "ThePrimeagen/harpoon"
+    }
+
+
 end)

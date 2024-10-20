@@ -4,7 +4,7 @@ export QT_QPA_PLATFORM="wayland;xcb"
 
 #ZSH_THEME="starship"
 
-plugins=(git ) #zsh-autosuggestions) #zsh-syntax-highlighting fast-syntax-highlighting) #zsh-autocomplete)
+plugins=(git  zsh-autosuggestions) #zsh-syntax-highlighting fast-syntax-highlighting) #zsh-autocomplete)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -13,6 +13,11 @@ if [[ -n $SSH_CONNECTION ]]; then
  else
    export EDITOR='nvim'
  fi
+
+
+#if [ -z "$TMUX" ]; then
+#    tmux
+#fi
 
 fastfetch --logo-type file --file /home/ac/.ascii
 # fastfetch --logo-type small
@@ -43,26 +48,49 @@ alias fastfetch='fastfetch --logo-type small'
 alias ψλεαρ='clear'
 alias fastfetch='fastfetch --logo-type file --file /home/ac/.ascii'
 alias wake-tv='wol 3a:a3:6f:54:a2:25'
+alias rider='sh /home/ac/.local/share/JetBrains/Toolbox/scripts/rider'
+alias sstart='sh /home/ac/.scripts/syncthing.sh'
 
+
+
+# wastebin
+function paste_from_stdin() {
+    jq -Rns '{text: inputs}' | \
+        curl  -s -H 'Content-Type: application/json' --data-binary @- https://bin.andreascharalambous.xyz | \
+        response=$(curl -s -X POST -d "$(cat "$1")" "$uri")
+        key=$(echo $response | jq -r '.path')
+        jq -r '. | "https://bin.andreascharalambous.xyz/$key"'
+}
+
+
+
+
+
+
+
+
+
+: '
 #hastebin
-#function hb {
-#    if [ $# -eq 0 ]; then
-#        echo "No file path specified."
-#        return
-#    elif [ ! -f "$1" ]; then
-#        echo "File path does not exist."
-#        return
-#    fi
-#
-#    uri="https://bin.andreascharalambous.xyz/documents"
-#    response=$(curl -s -X POST -d "$(cat "$1")" "$uri")
-#    if [ $? -eq 0 ]; then
-#        hasteKey=$(echo $response | jq -r '.key')
-#        echo "https://bin.andreascharalambous.xyz/$hasteKey"
-#    else
-#        echo "Failed to upload the document."
-#    fi
-#}
+function hb {
+    if [ $# -eq 0 ]; then
+        echo "No file path specified."
+        return
+    elif [ ! -f "$1" ]; then
+        echo "File path does not exist."
+        return
+    fi
+
+    uri="https://bin.andreascharalambous.xyz/"
+    response=$(curl -s -X POST -d "$(cat "$1")" "$uri")
+    if [ $? -eq 0 ]; then
+        hasteKey=$(echo $response | jq -r '.key')
+        echo "https://bin.andreascharalambous.xyz/$hasteKey"
+    else
+        echo "Failed to upload the document."
+    fi
+}
+'
 
 #screenshots
 export XDG_SCREENSHOTS_DIR=~/screens
@@ -77,4 +105,5 @@ export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 export PATH=$HOME/.local/bin:$PATH
+export TERM=xterm-256color
 export TERM=xterm-256color

@@ -17,3 +17,4 @@ vim.opt.scrolloff = 8
 vim.opt.clipboard = 'unnamedplus'
 
 vim.opt.conceallevel = 2
+
