@@ -12,7 +12,7 @@ set $term kitty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | wofi --show run --gtk-dark --no-actions | xargs swaymsg exec --
+set $menu dmenu_path | wofi --show drun --gtk-dark --no-actions | xargs swaymsg exec --
 
 ### Output configuration
 #
@@ -258,6 +258,9 @@ exec --no-startup-id "swayidle -w before-sleep 'swaylock --image /home/ac/.wallp
 bindsym $mod+Shift+s exec --no-startup-id 'systemctl suspend'
 bindsym $mod+Shift+d exec --no-startup-id 'systemctl hibernate'
 
+# poweroff
+bindsym $mod+Shift+p exec --no-startup-id poweroff
+
 #screenshot tool
 bindsym $mod+g exec --no-startup-id grim /home/ac/screens/$(date '+%y%m%d_%H-%M-%S').png
 # this one outputs to a file
@@ -276,7 +279,10 @@ bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
 bindsym $mod+q exec swaylock --image /home/ac/.wallpapers/arch/arch.png
 
 #syncthing (obsidian)
-exec --no-startup-id syncthing -no-browser
+exec --no-startup-id syncthing serve --no-browser
+
+# automatically connect to vpn when not on home wifi
+exec --no-startup-id sh $HOME/.scripts/vpn.sh
 
 #default workspaces for applications
 assign [class="Spotify"] 9

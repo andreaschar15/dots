@@ -69,5 +69,9 @@ return require('packer').startup(function(use)
         "ThePrimeagen/harpoon"
     }
 
+    use {
+        "OmniSharp/omnisharp-vim"
+    }
+
 
 end)
